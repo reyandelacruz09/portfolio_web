@@ -1,54 +1,14 @@
-import { Typography } from "@material-tailwind/react";
+import { useContent } from "../content";
 
-function Footer() {
+export default function Footer() {
+  const { profile } = useContent();
+
   return (
-    <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 py-6 text-center md:justify-between">
-      <Typography color="blue-gray" className="font-normal">
-        &copy; 2023 Employee Portal
-      </Typography>
-      <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
-        <li>
-          <Typography
-            as="a"
-            href="#"
-            color="blue-gray"
-            className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
-          >
-            About Us
-          </Typography>
-        </li>
-        <li>
-          <Typography
-            as="a"
-            href="#"
-            color="blue-gray"
-            className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
-          >
-            License
-          </Typography>
-        </li>
-        <li>
-          <Typography
-            as="a"
-            href="#"
-            color="blue-gray"
-            className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
-          >
-            Contribute
-          </Typography>
-        </li>
-        <li>
-          <Typography
-            as="a"
-            href="#"
-            color="blue-gray"
-            className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
-          >
-            Contact Us
-          </Typography>
-        </li>
-      </ul>
+    <footer className="bg-gray-50 dark:bg-[#0b1020] border-t border-gray-200/60 dark:border-white/5 py-8 px-6 text-center">
+      <p className="text-gray-500 dark:text-gray-600 text-sm">
+        &copy; {new Date().getFullYear()} {profile.name}. Built with React &
+        Tailwind CSS.
+      </p>
     </footer>
   );
 }
-export default Footer;

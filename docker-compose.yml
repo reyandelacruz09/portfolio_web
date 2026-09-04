@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - portfolio-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ../portfolio_api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/portfolio_db
+      - SECRET_KEY=change-this-in-production
+      - DEFAULT_ADMIN_USERNAME=admin
+      - DEFAULT_ADMIN_PASSWORD=admin123
+      - ALLOWED_ORIGINS=["http://localhost:3000","http://localhost:80","http://frontend"]
+    depends_on:
+      - db
+    networks:
+      - portfolio-network
+    restart: unless-stopped
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=portfolio_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - portfolio-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  portfolio-network:
+    driver: bridge
