@@ -1,6 +1,6 @@
 export const profile = {
-  name: "Reyan De La Cruz",
-  title: "Senior Software Developer",
+  name: "Reyan DeLa Cruz",
+  title: "Full-stack developer",
   tagline:
     "Full-stack developer with 7+ years of experience building enterprise applications, RPA solutions, and modern web platforms using Python, JavaScript, and cloud technologies.",
   location: "Rosario, Pasig City, Philippines",
@@ -21,7 +21,7 @@ export const contact = {
 
 export const about = {
   paragraph1:
-    "I'm a senior software developer with 7+ years of experience engineering enterprise-grade applications across fintech, HR, procurement, and automotive industries. I specialize in building full-stack web applications, automating business processes with RPA, and delivering scalable solutions using Python, JavaScript, and modern cloud platforms.",
+    "I'm a Full-stack developer with 7+ years of experience engineering enterprise-grade applications across fintech, HR, procurement, and automotive industries. I specialize in building full-stack web applications, automating business processes with RPA, and delivering scalable solutions using Python, JavaScript, and modern cloud platforms.",
   paragraph2:
     "From building applicant tracking systems for Uniqlo to developing RPA tools that automate financial reconciliation for SB Finance, I thrive on solving complex problems with clean, maintainable code. I'm passionate about leveraging modern tools like React, Django, FastAPI, Docker, and AWS to deliver real business value.",
 };
