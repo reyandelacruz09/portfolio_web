@@ -1,4 +1,5 @@
 import { useContent } from "../content";
+import { Link } from "@tanstack/react-router";
 
 export default function Footer() {
   const { profile } = useContent();
@@ -19,6 +20,12 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} {profile.name}. Built with React &
           Tailwind CSS.
         </p>
+        <Link
+          to="/admin"
+          className="inline-block mt-4 text-xs text-gray-400 dark:text-gray-600 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+        >
+          Admin
+        </Link>
       </div>
     </footer>
   );
