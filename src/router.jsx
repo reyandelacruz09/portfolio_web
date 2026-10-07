@@ -27,6 +27,7 @@ const routeTree = rootRoute.addChildren([portfolioRoute, adminRoute]);
 
 export const router = createRouter({
   routeTree,
+  basepath: process.env.PUBLIC_URL || "/",
   defaultPreload: false,
   scrollRestoration: false,
 });
