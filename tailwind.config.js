@@ -13,12 +13,6 @@ module.exports = {
           card: "rgb(var(--color-card) / <alpha-value>)",
           border: "rgb(var(--color-border) / <alpha-value>)",
         },
-        accent: {
-          cyan: "#06b6d4",
-          teal: "#14b8a6",
-          violet: "#8b5cf6",
-          purple: "#a855f7",
-        },
       },
       fontFamily: {
         sans: [
@@ -61,11 +55,6 @@ module.exports = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-      },
-      boxShadow: {
-        "glow-cyan": "0 0 20px rgba(6, 182, 212, 0.3)",
-        "glow-violet": "0 0 20px rgba(139, 92, 246, 0.3)",
-        "glow-lg": "0 0 40px rgba(6, 182, 212, 0.2), 0 0 80px rgba(139, 92, 246, 0.1)",
       },
     },
   },

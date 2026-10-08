@@ -10,62 +10,62 @@ import {
 const categoryConfig = {
   Frontend: {
     icon: FiCode,
-    iconColor: "text-cyan-600 dark:text-cyan-400",
-    bgColor: "bg-cyan-500/10",
-    badgeBg: "bg-cyan-500/10",
-    badgeText: "text-cyan-700 dark:text-cyan-400",
-    badgeBorder: "border-cyan-500/20",
+    iconColor: "text-700 dark:text-500",
+    bgColor: "bg-700/10",
+    badgeBg: "bg-700/10",
+    badgeText: "text-800 dark:text-500",
+    badgeBorder: "border-700/20",
   },
   Backend: {
     icon: FiServer,
-    iconColor: "text-violet-600 dark:text-violet-400",
-    bgColor: "bg-violet-500/10",
-    badgeBg: "bg-violet-500/10",
-    badgeText: "text-violet-700 dark:text-violet-400",
-    badgeBorder: "border-violet-500/20",
+    iconColor: "text-700 dark:text-500",
+    bgColor: "bg-700/10",
+    badgeBg: "bg-700/10",
+    badgeText: "text-800 dark:text-500",
+    badgeBorder: "border-700/20",
   },
   "Data & Analytics": {
     icon: FiDatabase,
-    iconColor: "text-teal-600 dark:text-teal-400",
-    bgColor: "bg-teal-500/10",
-    badgeBg: "bg-teal-500/10",
-    badgeText: "text-teal-700 dark:text-teal-400",
-    badgeBorder: "border-teal-500/20",
+    iconColor: "text-700 dark:text-500",
+    bgColor: "bg-700/10",
+    badgeBg: "bg-700/10",
+    badgeText: "text-800 dark:text-500",
+    badgeBorder: "border-700/20",
   },
   "DevOps & Tools": {
     icon: FiTool,
-    iconColor: "text-purple-600 dark:text-purple-400",
-    bgColor: "bg-purple-500/10",
-    badgeBg: "bg-purple-500/10",
-    badgeText: "text-purple-700 dark:text-purple-400",
-    badgeBorder: "border-purple-500/20",
+    iconColor: "text-700 dark:text-500",
+    bgColor: "bg-700/10",
+    badgeBg: "bg-700/10",
+    badgeText: "text-800 dark:text-500",
+    badgeBorder: "border-700/20",
   },
   Other: {
     icon: FiCpu,
-    iconColor: "text-emerald-600 dark:text-emerald-400",
-    bgColor: "bg-emerald-500/10",
-    badgeBg: "bg-emerald-500/10",
-    badgeText: "text-emerald-700 dark:text-emerald-400",
-    badgeBorder: "border-emerald-500/20",
+    iconColor: "text-700 dark:text-500",
+    bgColor: "bg-700/10",
+    badgeBg: "bg-700/10",
+    badgeText: "text-800 dark:text-500",
+    badgeBorder: "border-700/20",
   },
 };
 
 const defaultConfig = {
   icon: FiCpu,
-  iconColor: "text-gray-600 dark:text-gray-400",
-  bgColor: "bg-gray-500/10",
-  badgeBg: "bg-gray-500/10",
-  badgeText: "text-gray-700 dark:text-gray-400",
-  badgeBorder: "border-gray-500/20",
+  iconColor: "text-600 dark:text-400",
+  bgColor: "bg-500/10",
+  badgeBg: "bg-500/10",
+  badgeText: "text-700 dark:text-400",
+  badgeBorder: "border-500/20",
 };
 
 export default function Skills() {
   const { skills } = useContent();
 
   return (
-    <section id="skills" className="section-padding bg-gray-50 dark:bg-[#0f1629] relative">
+    <section id="skills" className="section-padding bg-100 dark:bg-[#211e1a] relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-cyan-500/20" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-700/20" />
       </div>
       <div className="max-w-5xl mx-auto">
         <h2 className="section-title">Skills</h2>
@@ -76,7 +76,7 @@ export default function Skills() {
             return (
               <div
                 key={group.category}
-                className="bg-white dark:bg-[#111b2e] rounded-2xl p-6 border border-gray-200 dark:border-white/5 card-hover relative overflow-hidden group shadow-sm"
+                className="bg-white dark:bg-[#292524] rounded-2xl p-6 border border-200 dark:border-white/5 card-hover relative overflow-hidden group shadow-sm"
               >
                 <div className={`absolute inset-0 ${config.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
                 <div className="relative">
@@ -84,7 +84,7 @@ export default function Skills() {
                     <span className={`p-2.5 rounded-xl ${config.bgColor} ${config.iconColor}`}>
                       {Icon && <Icon className="w-5 h-5" />}
                     </span>
-                    <h3 className="text-gray-900 dark:text-white font-semibold text-lg">
+                    <h3 className="text-900 dark:text-white font-semibold text-lg">
                       {group.category}
                     </h3>
                   </div>

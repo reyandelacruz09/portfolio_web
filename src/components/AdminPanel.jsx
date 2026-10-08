@@ -31,10 +31,10 @@ const sectionHints = {
 
 function Field({ label, value, onChange, textarea, type = "text" }) {
   const base =
-    "w-full px-3 py-2.5 rounded-lg border border-gray-300 dark:border-white/10 bg-white dark:bg-[#0a0e1a] text-gray-900 dark:text-slate-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/40 transition-all text-sm";
+    "w-full px-3 py-2.5 rounded-lg border border-300 dark:border-white/10 bg-white dark:bg-[#1c1917] text-900 dark:text-100 placeholder-400 focus:outline-none focus:ring-2 focus:ring-700/50 focus:border-700/40 transition-all text-sm";
   return (
     <label className="block">
-      <span className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5 uppercase tracking-wide">
+      <span className="block text-xs font-medium text-500 dark:text-400 mb-1.5 uppercase tracking-wide">
         {label}
       </span>
       {textarea ? (
@@ -58,15 +58,15 @@ function Field({ label, value, onChange, textarea, type = "text" }) {
 
 function Section({ title, hint, children }) {
   return (
-    <section className="bg-white dark:bg-[#0f1428] border border-gray-200/70 dark:border-white/5 rounded-2xl p-6 shadow-lg shadow-black/5">
-      <div className="mb-5 pb-3 border-b border-gray-200/70 dark:border-white/5">
-        <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-widest">
-          <span className="text-cyan-500">
+    <section className="bg-white dark:bg-[#1c1917] border border-200/70 dark:border-white/5 rounded-2xl p-6 shadow-lg shadow-black/5">
+      <div className="mb-5 pb-3 border-b border-200/70 dark:border-white/5">
+        <h3 className="text-sm font-semibold text-900 dark:text-white uppercase tracking-widest">
+          <span className="text-700">
             {title}
           </span>
         </h3>
         {hint && (
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{hint}</p>
+          <p className="text-xs text-500 dark:text-400 mt-1">{hint}</p>
         )}
       </div>
       <div className="space-y-4">{children}</div>
@@ -76,19 +76,19 @@ function Section({ title, hint, children }) {
 
 function ListRow({ index, onMoveUp, onMoveDown, onRemove, children }) {
   return (
-    <div className="group relative bg-white dark:bg-[#111631] border border-gray-200 dark:border-white/5 rounded-xl p-4">
+    <div className="group relative bg-white dark:bg-[#292524] border border-200 dark:border-white/5 rounded-xl p-4">
       <div className="absolute -top-2 -right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
         <button
           onClick={onMoveUp}
           disabled={index === 0}
-          className="w-7 h-7 rounded-full bg-gray-200 dark:bg-white/10 text-gray-600 dark:text-gray-300 hover:bg-cyan-500 hover:text-white disabled:opacity-30 text-xs font-bold"
+          className="w-7 h-7 rounded-full bg-200 dark:bg-white/10 text-600 dark:text-300 hover:bg-700 hover:text-white disabled:opacity-30 text-xs font-bold"
           title="Move up"
         >
           ↑
         </button>
         <button
           onClick={onMoveDown}
-          className="w-7 h-7 rounded-full bg-gray-200 dark:bg-white/10 text-gray-600 dark:text-gray-300 hover:bg-cyan-500 hover:text-white text-xs font-bold"
+          className="w-7 h-7 rounded-full bg-200 dark:bg-white/10 text-600 dark:text-300 hover:bg-700 hover:text-white text-xs font-bold"
           title="Move down"
         >
           ↓
@@ -150,7 +150,7 @@ function SocialsTab({ data, set }) {
       ))}
       <button
         onClick={() => set([...data, { label: "", url: "" }])}
-        className="text-sm text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+        className="text-sm text-700 dark:text-500 font-medium hover:underline"
       >
         + Add social
       </button>
@@ -177,7 +177,7 @@ function AboutTab({ data, set }) {
       ))}
       <button
         onClick={() => set([...data, ""])}
-        className="text-sm text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+        className="text-sm text-700 dark:text-500 font-medium hover:underline"
       >
         + Add paragraph
       </button>
@@ -208,7 +208,7 @@ function SkillsTab({ data, set }) {
       ))}
       <button
         onClick={() => set([...data, { category: "", items: [] }])}
-        className="text-sm text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+        className="text-sm text-700 dark:text-500 font-medium hover:underline"
       >
         + Add category
       </button>
@@ -246,7 +246,7 @@ function ProjectsTab({ data, set }) {
         onClick={() =>
           set([...data, { title: "", description: "", tech: [], github: "", live: "", image_url: "" }])
         }
-        className="text-sm text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+        className="text-sm text-700 dark:text-500 font-medium hover:underline"
       >
         + Add project
       </button>
@@ -275,7 +275,7 @@ function ExperienceTab({ data, set }) {
       ))}
       <button
         onClick={() => set([...data, { role: "", company: "", period: "", description: "" }])}
-        className="text-sm text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+        className="text-sm text-700 dark:text-500 font-medium hover:underline"
       >
         + Add experience
       </button>
@@ -294,13 +294,13 @@ function ContactTab({ data, set }) {
 
 function InboxTab({ messages, isLoading, unread, onOpen, readMutation, deleteMutation, markAllRead }) {
   if (isLoading) {
-    return <p className="text-sm text-gray-500">Loading messages…</p>;
+    return <p className="text-sm text-500">Loading messages…</p>;
   }
 
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <p className="text-xs text-gray-500 dark:text-gray-400">
+        <p className="text-xs text-500 dark:text-400">
           {unread > 0
             ? `${unread} unread message${unread > 1 ? "s" : ""}`
             : "All caught up"}
@@ -308,14 +308,14 @@ function InboxTab({ messages, isLoading, unread, onOpen, readMutation, deleteMut
         {unread > 0 && (
           <button
             onClick={markAllRead}
-            className="text-xs text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+            className="text-xs text-700 dark:text-500 font-medium hover:underline"
           >
             Mark all as read
           </button>
         )}
       </div>
       {messages.length === 0 ? (
-        <p className="text-sm text-gray-500">No messages yet.</p>
+        <p className="text-sm text-500">No messages yet.</p>
       ) : (
         messages.map((m) => (
           <div
@@ -324,10 +324,10 @@ function InboxTab({ messages, isLoading, unread, onOpen, readMutation, deleteMut
             role="button"
             tabIndex={0}
             onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onOpen(m)}
-            className={`relative bg-white dark:bg-[#111631] border rounded-xl p-4 transition-colors cursor-pointer ${
+            className={`relative bg-white dark:bg-[#292524] border rounded-xl p-4 transition-colors cursor-pointer ${
               m.is_read
-                ? "border-gray-200 dark:border-white/5 hover:border-cyan-500/40"
-                : "border-cyan-500/40 dark:border-cyan-400/40 bg-cyan-500/[0.03] dark:bg-cyan-400/[0.03]"
+                ? "border-200 dark:border-white/5 hover:border-700/40"
+                : "border-700/40 dark:border-500/40 bg-700/[0.03] dark:bg-500/[0.03]"
             }`}
           >
             <div
@@ -338,7 +338,7 @@ function InboxTab({ messages, isLoading, unread, onOpen, readMutation, deleteMut
                 onClick={() =>
                   readMutation.mutate({ id: m.id, isRead: !m.is_read })
                 }
-                className="w-7 h-7 rounded-full bg-gray-200 dark:bg-white/10 text-gray-600 dark:text-gray-300 hover:bg-violet-500 hover:text-white text-xs"
+                className="w-7 h-7 rounded-full bg-200 dark:bg-white/10 text-600 dark:text-300 hover:bg-700 hover:text-white text-xs"
                 title={m.is_read ? "Mark as unread" : "Mark as read"}
               >
                 {m.is_read ? <FiEyeOff className="mx-auto w-3.5 h-3.5" /> : <FiEye className="mx-auto w-3.5 h-3.5" />}
@@ -354,23 +354,23 @@ function InboxTab({ messages, isLoading, unread, onOpen, readMutation, deleteMut
             <div className="flex items-start justify-between gap-4">
               <div>
                 {!m.is_read && (
-                  <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 dark:bg-cyan-400/10 px-2 py-0.5 rounded-full mb-1.5">
+                  <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-700 dark:text-500 bg-700/10 dark:bg-500/10 px-2 py-0.5 rounded-full mb-1.5">
                     New
                   </span>
                 )}
-                <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                  {m.name} <span className="text-gray-400 font-normal">· {m.email}</span>
+                <p className="text-sm font-semibold text-900 dark:text-white">
+                  {m.name} <span className="text-400 font-normal">· {m.email}</span>
                 </p>
-                <p className="text-xs text-gray-400 mt-0.5">
+                <p className="text-xs text-400 mt-0.5">
                   {m.subject || "(no subject)"} · {new Date(m.created_at).toLocaleString()}
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 whitespace-pre-wrap line-clamp-3">
+                <p className="text-sm text-600 dark:text-300 mt-2 whitespace-pre-wrap line-clamp-3">
                   {m.message}
                 </p>
               </div>
-              <FiMail className="shrink-0 w-4 h-4 text-gray-300 dark:text-gray-600 mt-1" />
+              <FiMail className="shrink-0 w-4 h-4 text-300 dark:text-600 mt-1" />
             </div>
-            <p className="mt-2 text-xs font-medium text-cyan-600 dark:text-cyan-400">
+            <p className="mt-2 text-xs font-medium text-700 dark:text-500">
               View details →
             </p>
           </div>
@@ -482,19 +482,19 @@ export default function AdminPanel() {
       loginMutation.mutate(loginForm);
     };
     return (
-      <div className="min-h-screen bg-[#f8fafc] dark:bg-[#0a0e1a] text-gray-900 dark:text-slate-200 flex items-center justify-center px-6">
+      <div className="min-h-screen bg-[#faf8f5] dark:bg-[#1c1917] text-900 dark:text-200 flex items-center justify-center px-6">
         <div className="w-full max-w-sm">
           <Link
             to="/"
-            className="mb-6 text-sm text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400"
+            className="mb-6 text-sm text-500 dark:text-400 hover:text-700 dark:hover:text-500"
           >
             ← Back to portfolio
           </Link>
-          <div className="bg-white dark:bg-[#0f1428] border border-gray-200/70 dark:border-white/5 rounded-2xl p-8 shadow-xl">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+          <div className="bg-white dark:bg-[#1c1917] border border-200/70 dark:border-white/5 rounded-2xl p-8 shadow-xl">
+            <h1 className="text-xl font-bold text-900 dark:text-white mb-1">
               Admin Login
             </h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+            <p className="text-sm text-500 dark:text-400 mb-6">
               Sign in to edit portfolio content.
             </p>
             <form onSubmit={submitLogin} className="space-y-4">
@@ -521,7 +521,7 @@ export default function AdminPanel() {
               <button
                 type="submit"
                 disabled={loginMutation.isPending}
-                className="w-full py-2.5 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+                className="w-full py-2.5 rounded-xl font-semibold text-white bg-700 hover:bg-500 transition-all duration-300 shadow-lg shadow-700/20 text-sm"
               >
                 {loginMutation.isPending ? "Signing in…" : "Sign In"}
               </button>
@@ -577,24 +577,24 @@ export default function AdminPanel() {
   })();
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] dark:bg-[#0a0e1a] text-gray-900 dark:text-slate-200">
-      <header className="bg-white/80 dark:bg-[#0a0e1a]/80 backdrop-blur-xl border-b border-gray-200/60 dark:border-white/5 sticky top-0 z-40">
+    <div className="min-h-screen bg-[#faf8f5] dark:bg-[#1c1917] text-900 dark:text-200">
+      <header className="bg-white/80 dark:bg-[#1c1917]/80 backdrop-blur-xl border-b border-200/60 dark:border-white/5 sticky top-0 z-40">
         <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-6">
           <div className="flex items-center gap-3">
             <Link
               to="/"
-              className="text-sm text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400"
+              className="text-sm text-500 dark:text-400 hover:text-700 dark:hover:text-500"
             >
               ← View site
             </Link>
-            <h1 className="font-bold text-gray-900 dark:text-white">
-              Admin <span className="text-cyan-600 dark:text-cyan-400">Dashboard</span>
+            <h1 className="font-bold text-900 dark:text-white">
+              Admin <span className="text-700 dark:text-500">Dashboard</span>
             </h1>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-xl border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all duration-300"
+              className="p-2.5 rounded-xl border border-200 dark:border-white/10 text-600 dark:text-400 hover:text-700 dark:hover:text-500 hover:border-700/50 hover:bg-700/5 transition-all duration-300"
               aria-label="Toggle theme"
               title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
@@ -609,7 +609,7 @@ export default function AdminPanel() {
             />
             <button
               onClick={logout}
-              className="text-sm px-4 py-2 rounded-lg border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:text-red-500 hover:border-red-500/50 transition-colors"
+              className="text-sm px-4 py-2 rounded-lg border border-200 dark:border-white/10 text-600 dark:text-400 hover:text-red-500 hover:border-red-500/50 transition-colors"
             >
               Logout
             </button>
@@ -625,8 +625,8 @@ export default function AdminPanel() {
               onClick={() => setTab(t)}
               className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 tab === t
-                  ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/20"
-                  : "bg-white dark:bg-[#0f1428] border border-gray-200 dark:border-white/5 text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400"
+                  ? "bg-700 text-white shadow-lg shadow-700/20"
+                  : "bg-white dark:bg-[#1c1917] border border-200 dark:border-white/5 text-600 dark:text-400 hover:text-700 dark:hover:text-500"
               }`}
             >
               {t}
@@ -634,7 +634,7 @@ export default function AdminPanel() {
                 <span
                   className={`absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 flex items-center justify-center rounded-full text-[10px] font-bold ${
                     tab === t
-                      ? "bg-white text-cyan-600"
+                      ? "bg-white text-700"
                       : "bg-red-500 text-white animate-pulse"
                   }`}
                 >
@@ -648,7 +648,7 @@ export default function AdminPanel() {
         {unreadCount > 0 && tab !== "Inbox" && (
           <button
             onClick={() => setTab("Inbox")}
-            className="mb-6 w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm bg-cyan-500/10 dark:bg-cyan-400/10 border border-cyan-500/30 dark:border-cyan-400/30 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-500/20 transition-colors"
+            className="mb-6 w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm bg-700/10 dark:bg-500/10 border border-700/30 dark:border-500/30 text-800 dark:text-400 hover:bg-700/20 transition-colors"
           >
             <span className="flex items-center gap-2">
               <FiBell className="w-4 h-4" />
@@ -661,7 +661,7 @@ export default function AdminPanel() {
         )}
 
         {contentQuery.isLoading ? (
-          <p className="text-gray-500">Loading content…</p>
+          <p className="text-500">Loading content…</p>
         ) : contentQuery.error ? (
           <p className="text-red-500">{contentQuery.error.message}</p>
         ) : (
@@ -684,7 +684,7 @@ export default function AdminPanel() {
               <button
                 onClick={() => saveMutation.mutate()}
                 disabled={saveMutation.isPending}
-                className="px-6 py-2.5 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+                className="px-6 py-2.5 rounded-xl font-semibold text-white bg-700 hover:bg-500 disabled:opacity-50 transition-all duration-300 shadow-lg shadow-700/20 text-sm"
               >
                 {saveMutation.isPending ? "Saving…" : "Save changes"}
               </button>

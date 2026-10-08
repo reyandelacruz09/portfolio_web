@@ -10,12 +10,7 @@ import Footer from "../components/Footer";
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-[#f8fafc] dark:bg-[#0a0e1a] text-gray-900 dark:text-slate-200 relative overflow-x-hidden">
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-glow-pulse" />
-        <div className="absolute top-1/3 -left-40 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal-500/3 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: '3s' }} />
-      </div>
+    <div className="min-h-screen bg-[#faf8f5] dark:bg-[#1c1917] text-900 dark:text-200 relative overflow-x-hidden">
       <div className="relative z-10">
         <Navbar />
         <main>

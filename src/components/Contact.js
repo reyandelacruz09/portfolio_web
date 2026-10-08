@@ -19,7 +19,7 @@ const iconMap = {
 };
 
 const inputBase =
-  "w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-slate-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/40 transition-all";
+  "w-full px-4 py-3 rounded-xl bg-100 dark:bg-white/5 border border-200 dark:border-white/10 text-900 dark:text-100 placeholder-400 focus:outline-none focus:ring-2 focus:ring-700/50 focus:border-700/40 transition-all";
 
 function MessageDialog({ open, onClose }) {
   const [form, setForm] = useState({
@@ -69,19 +69,19 @@ function MessageDialog({ open, onClose }) {
         className="absolute inset-0 bg-black/50 dark:bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="relative w-full max-w-lg bg-white dark:bg-[#0f1428] border border-gray-200/70 dark:border-white/10 rounded-2xl shadow-2xl shadow-black/20 max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200/70 dark:border-white/5">
+      <div className="relative w-full max-w-lg bg-white dark:bg-[#1c1917] border border-200/70 dark:border-white/10 rounded-2xl shadow-2xl shadow-black/20 max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-200/70 dark:border-white/5">
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-lg font-semibold text-900 dark:text-white">
               Send me a message
             </h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-500 dark:text-400">
               Delivered straight to my inbox.
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="p-2 rounded-full text-500 dark:text-400 hover:bg-100 dark:hover:bg-white/10 hover:text-900 dark:hover:text-white transition-colors"
             aria-label="Close"
           >
             <FiX className="w-5 h-5" />
@@ -130,7 +130,7 @@ function MessageDialog({ open, onClose }) {
               </p>
               <button
                 onClick={onClose}
-                className="px-6 py-2.5 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+                className="px-6 py-2.5 rounded-xl font-semibold text-white bg-700 hover:bg-500 transition-all duration-300 shadow-lg shadow-700/20 text-sm"
               >
                 Done
               </button>
@@ -139,7 +139,7 @@ function MessageDialog({ open, onClose }) {
             <button
               type="submit"
               disabled={sendMutation.isPending}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-white bg-700 hover:bg-500 disabled:opacity-50 transition-all duration-300 shadow-lg shadow-700/20 text-sm"
             >
               <FiSend className="w-4 h-4" />
               {sendMutation.isPending ? "Sending…" : "Send Message"}
@@ -156,14 +156,14 @@ export default function Contact() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="contact" className="section-padding bg-white dark:bg-[#0a0e1a] relative">
+    <section id="contact" className="section-padding bg-white dark:bg-[#1c1917] relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-cyan-500/20" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-700/20" />
       </div>
       <div className="max-w-2xl mx-auto relative">
         <div className="text-center">
           <h2 className="section-title">Get in Touch</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-10 leading-relaxed text-balance">
+          <p className="text-600 dark:text-400 mb-10 leading-relaxed text-balance">
             I'm always open to new opportunities, interesting projects, or just a
             conversation. Feel free to reach out.
           </p>
@@ -173,18 +173,18 @@ export default function Contact() {
           {contact.email && (
             <a
               href={`mailto:${contact.email}`}
-              className="flex items-center gap-3 text-gray-700 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-300 px-6 py-3 rounded-xl bg-gray-100 dark:bg-white/5 hover:bg-cyan-500/10 border border-gray-200 dark:border-white/5 hover:border-cyan-500/30"
+              className="flex items-center gap-3 text-700 dark:text-400 hover:text-700 dark:hover:text-500 transition-all duration-300 px-6 py-3 rounded-xl bg-100 dark:bg-white/5 hover:bg-700/10 border border-200 dark:border-white/5 hover:border-700/30"
             >
-              <FiMail className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+              <FiMail className="w-5 h-5 text-700 dark:text-500" />
               <span className="font-medium">{contact.email}</span>
             </a>
           )}
           {contact.phone && (
             <a
               href={`tel:${contact.phone}`}
-              className="flex items-center gap-3 text-gray-700 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 px-6 py-3 rounded-xl bg-gray-100 dark:bg-white/5 hover:bg-violet-500/10 border border-gray-200 dark:border-white/5 hover:border-violet-500/30"
+              className="flex items-center gap-3 text-700 dark:text-400 hover:text-700 dark:hover:text-500 transition-all duration-300 px-6 py-3 rounded-xl bg-100 dark:bg-white/5 hover:bg-700/10 border border-200 dark:border-white/5 hover:border-700/30"
             >
-              <FiPhone className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+              <FiPhone className="w-5 h-5 text-700 dark:text-500" />
               <span className="font-medium">{contact.phone}</span>
             </a>
           )}
@@ -193,7 +193,7 @@ export default function Contact() {
         <div className="flex flex-col items-center gap-4">
           <button
             onClick={() => setOpen(true)}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-700 hover:bg-500 transition-all duration-300 shadow-lg shadow-700/20 text-sm"
           >
             <FiSend className="w-4 h-4" />
             Send me a message
@@ -209,7 +209,7 @@ export default function Contact() {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-500/10 border border-gray-200 dark:border-white/10 text-sm text-gray-700 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/20 transition-all duration-300 backdrop-blur-sm"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-700/10 border border-200 dark:border-white/10 text-sm text-700 dark:text-400 hover:text-700 dark:hover:text-white hover:border-700/50 hover:bg-700/20 transition-all duration-300 backdrop-blur-sm"
               >
                 {Icon && <Icon className="w-4 h-4" />}
                 {s.label}

@@ -44,9 +44,9 @@ export default function MessageDetailModal({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-lg bg-white dark:bg-[#131a3a] border border-gray-200 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+        className="w-full max-w-lg bg-white dark:bg-[#292524] border border-200 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden"
       >
-        <div className="flex items-center justify-between px-5 py-4 bg-cyan-500 text-white">
+        <div className="flex items-center justify-between px-5 py-4 bg-700 text-white">
           <span className="font-semibold text-sm tracking-wide uppercase">
             Message details
           </span>
@@ -61,26 +61,26 @@ export default function MessageDetailModal({
 
         <div className="p-5 space-y-4">
           <div>
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+            <h3 className="text-lg font-bold text-900 dark:text-white">
               {message.subject || "(No subject)"}
             </h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 break-all">
+            <p className="text-sm text-500 dark:text-400 mt-1 break-all">
               {message.name} ·{" "}
               <a
                 href={`mailto:${message.email}`}
-                className="text-cyan-600 dark:text-cyan-400 hover:underline"
+                className="text-700 dark:text-500 hover:underline"
               >
                 {message.email}
               </a>
             </p>
-            <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 flex items-center gap-1">
+            <p className="text-xs text-400 dark:text-500 mt-1 flex items-center gap-1">
               <FiClock className="w-3 h-3" /> {dateTime(message.created_at)} (
               {timeAgo(message.created_at)})
             </p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-4">
-            <p className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
+          <div className="rounded-xl border border-200 dark:border-white/10 bg-100 dark:bg-white/[0.03] p-4">
+            <p className="text-sm text-700 dark:text-300 whitespace-pre-wrap leading-relaxed">
               {message.message}
             </p>
           </div>
@@ -88,14 +88,14 @@ export default function MessageDetailModal({
           <div className="flex flex-wrap items-center gap-2 pt-1">
             <a
               href={replyHref}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/20"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-700 hover:bg-500 transition-all duration-300 shadow-lg shadow-700/20"
             >
               <FiSend className="w-4 h-4" /> Reply
             </a>
             <button
               onClick={onToggleRead}
               disabled={readPending}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors disabled:opacity-50"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border border-300 dark:border-white/10 text-700 dark:text-300 hover:bg-100 dark:hover:bg-white/5 transition-colors disabled:opacity-50"
             >
               {message.is_read ? (
                 <>
@@ -109,7 +109,7 @@ export default function MessageDetailModal({
             </button>
             <button
               onClick={onMarkAllRead}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border border-300 dark:border-white/10 text-700 dark:text-300 hover:bg-100 dark:hover:bg-white/5 transition-colors"
             >
               Mark all read
             </button>
@@ -123,11 +123,11 @@ export default function MessageDetailModal({
           </div>
 
           {message.is_read ? (
-            <p className="flex items-center gap-1 text-xs text-gray-400">
+            <p className="flex items-center gap-1 text-xs text-400">
               <FiUser className="w-3 h-3" /> This message has been read.
             </p>
           ) : (
-            <p className="flex items-center gap-1 text-xs text-cyan-600 dark:text-cyan-400">
+            <p className="flex items-center gap-1 text-xs text-700 dark:text-500">
               <FiEye className="w-3 h-3" /> New unread message
             </p>
           )}

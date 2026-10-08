@@ -42,7 +42,7 @@ export default function NotificationBell({
       >
       <button
         onClick={() => setOpen((o) => !o)}
-        className="relative p-2.5 rounded-xl border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all duration-300"
+        className="relative p-2.5 rounded-xl border border-200 dark:border-white/10 text-600 dark:text-400 hover:text-700 dark:hover:text-500 hover:border-700/50 hover:bg-700/5 transition-all duration-300"
         aria-label="Notifications"
         title="Notifications"
       >
@@ -55,13 +55,13 @@ export default function NotificationBell({
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-80 max-w-[calc(100vw-2rem)] bg-white dark:bg-[#111631] border border-gray-200/70 dark:border-white/10 rounded-2xl shadow-2xl shadow-black/20 z-50 overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200/70 dark:border-white/5">
-            <span className="text-sm font-semibold text-gray-900 dark:text-white">
+        <div className="absolute right-0 mt-2 w-80 max-w-[calc(100vw-2rem)] bg-white dark:bg-[#292524] border border-200/70 dark:border-white/10 rounded-2xl shadow-2xl shadow-black/20 z-50 overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-200/70 dark:border-white/5">
+            <span className="text-sm font-semibold text-900 dark:text-white">
               Notifications
             </span>
             {unreadCount > 0 ? (
-              <span className="text-xs text-gray-500 dark:text-gray-400">
+              <span className="text-xs text-500 dark:text-400">
                 {unreadCount} unread
               </span>
             ) : (
@@ -73,7 +73,7 @@ export default function NotificationBell({
 
           <div className="max-h-80 overflow-y-auto">
             {recent.length === 0 ? (
-              <p className="px-4 py-8 text-center text-sm text-gray-500">
+              <p className="px-4 py-8 text-center text-sm text-500">
                 No messages yet.
               </p>
             ) : (
@@ -81,32 +81,32 @@ export default function NotificationBell({
                 <button
                   key={m.id}
                   onClick={() => openMessage(m)}
-                  className={`w-full text-left px-4 py-3 flex items-start gap-3 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5 ${
-                    !m.is_read ? "bg-cyan-500/[0.04] dark:bg-cyan-400/[0.04]" : ""
+                  className={`w-full text-left px-4 py-3 flex items-start gap-3 hover:bg-100 dark:hover:bg-white/5 transition-colors border-b border-100 dark:border-white/5 ${
+                    !m.is_read ? "bg-700/[0.04] dark:bg-500/[0.04]" : ""
                   }`}
                 >
                   <span
                     className={`mt-0.5 w-8 h-8 shrink-0 flex items-center justify-center rounded-full ${
                       m.is_read
-                        ? "bg-gray-100 dark:bg-white/10 text-gray-400"
-                        : "bg-cyan-500 text-white"
+                        ? "bg-100 dark:bg-white/10 text-400"
+                        : "bg-700 text-white"
                     }`}
                   >
                     <FiMail className="w-4 h-4" />
                   </span>
                   <span className="min-w-0">
                     <span className="flex items-center justify-between gap-2">
-                      <span className="text-sm font-semibold text-gray-900 dark:text-white truncate">
+                      <span className="text-sm font-semibold text-900 dark:text-white truncate">
                         {m.name}
                       </span>
-                      <span className="text-[10px] text-gray-400 shrink-0">
+                      <span className="text-[10px] text-400 shrink-0">
                         {timeAgo(m.created_at)}
                       </span>
                     </span>
-                    <span className="block text-xs text-gray-500 dark:text-gray-400 truncate">
+                    <span className="block text-xs text-500 dark:text-400 truncate">
                       {m.subject || m.message}
                     </span>
-                    <span className="block text-xs text-gray-400 dark:text-gray-500 truncate">
+                    <span className="block text-xs text-400 dark:text-500 truncate">
                       {m.message}
                     </span>
                   </span>
@@ -115,11 +115,11 @@ export default function NotificationBell({
             )}
           </div>
 
-          <div className="flex items-center justify-between px-4 py-2.5 border-t border-gray-200/70 dark:border-white/5 bg-gray-50 dark:bg-white/[0.02]">
+          <div className="flex items-center justify-between px-4 py-2.5 border-t border-200/70 dark:border-white/5 bg-100 dark:bg-white/[0.02]">
             {unreadCount > 0 ? (
               <button
                 onClick={onMarkAllRead}
-                className="text-xs text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+                className="text-xs text-700 dark:text-500 font-medium hover:underline"
               >
                 Mark all read
               </button>
@@ -131,7 +131,7 @@ export default function NotificationBell({
                 setOpen(false);
                 onViewAll();
               }}
-              className="text-xs text-cyan-600 dark:text-cyan-400 font-medium hover:underline"
+              className="text-xs text-700 dark:text-500 font-medium hover:underline"
             >
               View all messages →
             </button>
