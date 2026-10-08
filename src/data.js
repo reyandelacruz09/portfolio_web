@@ -4,7 +4,7 @@ export const profile = {
   tagline:
     "Full-stack developer with 7+ years of experience building enterprise applications, RPA solutions, and modern web platforms using Python, JavaScript, and cloud technologies.",
   location: "Rosario, Pasig City, Philippines",
-  photo: "/images/reyan-profile.jpg",
+  photo: `${process.env.PUBLIC_URL}/images/reyan-profile.jpg`,
   resumeUrl: "#contact",
 };
 
