@@ -61,7 +61,7 @@ function Section({ title, hint, children }) {
     <section className="bg-white dark:bg-[#0f1428] border border-gray-200/70 dark:border-white/5 rounded-2xl p-6 shadow-lg shadow-black/5">
       <div className="mb-5 pb-3 border-b border-gray-200/70 dark:border-white/5">
         <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-widest">
-          <span className="bg-gradient-to-r from-cyan-500 to-violet-500 bg-clip-text text-transparent">
+          <span className="text-cyan-500">
             {title}
           </span>
         </h3>
@@ -521,7 +521,7 @@ export default function AdminPanel() {
               <button
                 type="submit"
                 disabled={loginMutation.isPending}
-                className="w-full py-2.5 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+                className="w-full py-2.5 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
               >
                 {loginMutation.isPending ? "Signing in…" : "Sign In"}
               </button>
@@ -625,7 +625,7 @@ export default function AdminPanel() {
               onClick={() => setTab(t)}
               className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 tab === t
-                  ? "bg-gradient-to-r from-cyan-500 to-violet-500 text-white shadow-lg shadow-cyan-500/20"
+                  ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/20"
                   : "bg-white dark:bg-[#0f1428] border border-gray-200 dark:border-white/5 text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400"
               }`}
             >
@@ -684,7 +684,7 @@ export default function AdminPanel() {
               <button
                 onClick={() => saveMutation.mutate()}
                 disabled={saveMutation.isPending}
-                className="px-6 py-2.5 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 disabled:opacity-50 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+                className="px-6 py-2.5 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
               >
                 {saveMutation.isPending ? "Saving…" : "Save changes"}
               </button>

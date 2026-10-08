@@ -89,7 +89,7 @@ export default function NotificationBell({
                     className={`mt-0.5 w-8 h-8 shrink-0 flex items-center justify-center rounded-full ${
                       m.is_read
                         ? "bg-gray-100 dark:bg-white/10 text-gray-400"
-                        : "bg-gradient-to-r from-cyan-500 to-violet-500 text-white"
+                        : "bg-cyan-500 text-white"
                     }`}
                   >
                     <FiMail className="w-4 h-4" />

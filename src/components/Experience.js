@@ -7,7 +7,7 @@ export default function Experience() {
   return (
     <section id="experience" className="section-padding bg-gray-50 dark:bg-[#0f1629] relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-cyan-500/20" />
       </div>
       <div className="max-w-4xl mx-auto">
         <h2 className="section-title">Experience</h2>
@@ -15,12 +15,9 @@ export default function Experience() {
           {experience.map((exp, i) => (
             <div
               key={i}
-              className="relative pl-8 border-l-2"
-              style={{
-                borderImage: `linear-gradient(to bottom, rgba(6, 182, 212, 0.4), rgba(139, 92, 246, 0.4)) 1`,
-              }}
+              className="relative pl-8 border-l-2 border-cyan-500/40"
             >
-              <div className="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-gradient-to-br from-cyan-500 to-violet-500 border-4 border-gray-50 dark:border-[#0f1629] shadow-lg shadow-cyan-500/20" />
+              <div className="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-cyan-500 border-4 border-gray-50 dark:border-[#0f1629] shadow-lg shadow-cyan-500/20" />
               <div className="bg-white dark:bg-[#111b2e] rounded-2xl p-6 border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-lg hover:border-cyan-500/30 dark:hover:border-white/10 transition-all duration-300 group">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
                   <div className="flex items-center gap-2">

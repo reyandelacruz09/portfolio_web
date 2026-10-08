@@ -10,7 +10,6 @@ import {
 const categoryConfig = {
   Frontend: {
     icon: FiCode,
-    gradient: "from-cyan-500/20 to-cyan-500/5",
     iconColor: "text-cyan-600 dark:text-cyan-400",
     bgColor: "bg-cyan-500/10",
     badgeBg: "bg-cyan-500/10",
@@ -19,7 +18,6 @@ const categoryConfig = {
   },
   Backend: {
     icon: FiServer,
-    gradient: "from-violet-500/20 to-violet-500/5",
     iconColor: "text-violet-600 dark:text-violet-400",
     bgColor: "bg-violet-500/10",
     badgeBg: "bg-violet-500/10",
@@ -28,7 +26,6 @@ const categoryConfig = {
   },
   "Data & Analytics": {
     icon: FiDatabase,
-    gradient: "from-teal-500/20 to-teal-500/5",
     iconColor: "text-teal-600 dark:text-teal-400",
     bgColor: "bg-teal-500/10",
     badgeBg: "bg-teal-500/10",
@@ -37,7 +34,6 @@ const categoryConfig = {
   },
   "DevOps & Tools": {
     icon: FiTool,
-    gradient: "from-purple-500/20 to-purple-500/5",
     iconColor: "text-purple-600 dark:text-purple-400",
     bgColor: "bg-purple-500/10",
     badgeBg: "bg-purple-500/10",
@@ -46,7 +42,6 @@ const categoryConfig = {
   },
   Other: {
     icon: FiCpu,
-    gradient: "from-emerald-500/20 to-emerald-500/5",
     iconColor: "text-emerald-600 dark:text-emerald-400",
     bgColor: "bg-emerald-500/10",
     badgeBg: "bg-emerald-500/10",
@@ -57,7 +52,6 @@ const categoryConfig = {
 
 const defaultConfig = {
   icon: FiCpu,
-  gradient: "from-gray-500/20 to-gray-500/5",
   iconColor: "text-gray-600 dark:text-gray-400",
   bgColor: "bg-gray-500/10",
   badgeBg: "bg-gray-500/10",
@@ -71,7 +65,7 @@ export default function Skills() {
   return (
     <section id="skills" className="section-padding bg-gray-50 dark:bg-[#0f1629] relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-cyan-500/20" />
       </div>
       <div className="max-w-5xl mx-auto">
         <h2 className="section-title">Skills</h2>
@@ -84,7 +78,7 @@ export default function Skills() {
                 key={group.category}
                 className="bg-white dark:bg-[#111b2e] rounded-2xl p-6 border border-gray-200 dark:border-white/5 card-hover relative overflow-hidden group shadow-sm"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${config.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                <div className={`absolute inset-0 ${config.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-5">
                     <span className={`p-2.5 rounded-xl ${config.bgColor} ${config.iconColor}`}>

@@ -130,7 +130,7 @@ function MessageDialog({ open, onClose }) {
               </p>
               <button
                 onClick={onClose}
-                className="px-6 py-2.5 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+                className="px-6 py-2.5 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
               >
                 Done
               </button>
@@ -139,7 +139,7 @@ function MessageDialog({ open, onClose }) {
             <button
               type="submit"
               disabled={sendMutation.isPending}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 disabled:opacity-50 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
             >
               <FiSend className="w-4 h-4" />
               {sendMutation.isPending ? "Sending…" : "Send Message"}
@@ -158,8 +158,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding bg-white dark:bg-[#0a0e1a] relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-cyan-500/5 via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-cyan-500/20" />
       </div>
       <div className="max-w-2xl mx-auto relative">
         <div className="text-center">
@@ -194,7 +193,7 @@ export default function Contact() {
         <div className="flex flex-col items-center gap-4">
           <button
             onClick={() => setOpen(true)}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 text-sm"
           >
             <FiSend className="w-4 h-4" />
             Send me a message
@@ -210,7 +209,7 @@ export default function Contact() {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500/10 to-violet-500/10 border border-gray-200 dark:border-white/10 text-sm text-gray-700 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-white hover:border-cyan-500/50 hover:from-cyan-500/20 hover:to-violet-500/20 transition-all duration-300 backdrop-blur-sm"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-500/10 border border-gray-200 dark:border-white/10 text-sm text-gray-700 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/20 transition-all duration-300 backdrop-blur-sm"
               >
                 {Icon && <Icon className="w-4 h-4" />}
                 {s.label}

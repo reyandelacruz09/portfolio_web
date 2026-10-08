@@ -46,7 +46,7 @@ export default function MessageDetailModal({
         onClick={(e) => e.stopPropagation()}
         className="w-full max-w-lg bg-white dark:bg-[#131a3a] border border-gray-200 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden"
       >
-        <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-cyan-500 to-violet-500 text-white">
+        <div className="flex items-center justify-between px-5 py-4 bg-cyan-500 text-white">
           <span className="font-semibold text-sm tracking-wide uppercase">
             Message details
           </span>
@@ -88,7 +88,7 @@ export default function MessageDetailModal({
           <div className="flex flex-wrap items-center gap-2 pt-1">
             <a
               href={replyHref}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 transition-all duration-300 shadow-lg shadow-cyan-500/20"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/20"
             >
               <FiSend className="w-4 h-4" /> Reply
             </a>

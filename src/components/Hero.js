@@ -15,15 +15,9 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/10 via-transparent to-transparent" />
-        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-gradient-radial from-violet-500/8 via-transparent to-transparent" />
-        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-gradient-radial from-teal-500/5 via-transparent to-transparent" />
-      </div>
-
       {profile.photo && (
         <div className="relative mb-8 animate-slide-up opacity-0">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 blur-xl opacity-30 animate-glow-pulse" />
+          <div className="absolute inset-0 rounded-full bg-cyan-500 blur-xl opacity-30 animate-glow-pulse" />
           <img
             src={profile.photo}
             alt={profile.name}
